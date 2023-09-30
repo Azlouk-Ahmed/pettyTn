@@ -3,7 +3,11 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const app = express();
+const userRoute = require("./routes/userRoutes");
 app.use(express.json());
+
+app.use('/api/user', userRoute);
+
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)
