@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../../components/header/Header'
 import './landing.css'
 import { useState, useEffect } from 'react';
+import Footer from '../../components/footer/Footer';
 
 function Landing() {
     const [text, setText] = useState('');
@@ -43,6 +44,7 @@ function Landing() {
       </section>
     </div>
     
+    <Footer />
 
     </>
   )

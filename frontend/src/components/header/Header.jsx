@@ -3,11 +3,11 @@ import './Header.css'
 
 function Header() {
   return (
-    <div className="container">
+    <div className="nav-bar-container">
       <div className='logocontainer'>
       <img src="\img\logo1.png" alt="" className='logo'/>
       </div>
-        <div className="links">
+        <div className="nav-bar-links">
         <ul >
           <li><a href="#">Home</a></li>
           <li><a href="#">Pets</a></li>
@@ -23,7 +23,6 @@ function Header() {
       <div className="profil">
       <div className="profilname">
         <p className='nom'>anis allagui</p>
-       
       </div>
       <div className="rouge" ><img src="\img\avatar.avif" alt="" className='profilpic' /></div>
       </div>
