@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200;600&family=Gabarito&family=Hanken+Grotesk:wght@100&family=Lobster+Two:ital@1&family=Poppins:ital,wght@0,300;0,400;1,400&family=Quicksand:wght@500;700&family=Roboto+Slab:wght@100;700&display=swap');
+
+
+:root {
+  --bg-color: #f8f9fb;
+  --primary-color: #6ec8f1;
+  --secondary-color: #ffe68c;
+  --third-color: #81e8cf;
+  --text-color:#353837;
+}
+
+
+body {
+  background: var(--bg-color);
+
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}

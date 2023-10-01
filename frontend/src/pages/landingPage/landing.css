@@ -1,0 +1,19 @@
+.landpagecontent{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14vh;
+}
+.paragraphe{
+  position: relative;
+  width: 50%;
+ margin: 10%;
+  background-color: transparent;
+  font-size: 35px;
+  margin-bottom: 5%;
+}
+.paragraphe img{
+  position: absolute;
+  top: -163px;
+  left: -55px;
+}
