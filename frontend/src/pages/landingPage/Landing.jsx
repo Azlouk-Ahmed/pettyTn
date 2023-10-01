@@ -31,10 +31,19 @@ function Landing() {
       <section className="landpagecontent">
    <div className='paragraphe'>
    <img src="\img\pate.png" alt="" />
-   <bold><p>{text}</p></bold>
-        <p>
-         <br/>
-        Find your furry friend and give them a forever home. Our mission is to connect loving pet owners with adorable animals in need of a loving family. </p>
+   <bold><h3>{text}</h3></bold>
+        <p className='landing-parag'>
+          Find your furry friend and give them a forever home. Our mission is to connect loving pet owners with adorable animals in need of a loving family. 
+          <div>
+            <button className="primary--button">
+              login
+            </button>
+            <button className="secondary--button">
+              view animals posts
+            </button>
+
+          </div>
+        </p>
    </div>     
 
         <div className="picture">

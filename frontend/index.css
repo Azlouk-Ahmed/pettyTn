@@ -6,12 +6,14 @@
   --primary-color: #6ec8f1;
   --secondary-color: #ffe68c;
   --third-color: #81e8cf;
+  --button-primary-color: #46a4ca;
   --text-color:#353837;
 }
 
 
 body {
   background: var(--bg-color);
+  overflow-x: hidden;
 
 }
 
@@ -20,3 +22,47 @@ body {
   margin: 0;
   padding: 0;
 }
+/* ::-webkit-scrollbar-thumb {
+  background: red;
+} */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+  padding: 5px 3px;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 7px;
+}
+
+.primary--button {
+  color: #fff;
+  border: 2px solid var(--primary-color);
+  padding: 6px 17px;
+  border-radius: 20px;
+  font-family: "Poppins";
+  font-size: 14px;
+  cursor: pointer;
+
+  background: var(--button-primary-color);
+}
+
+.secondary--button {
+  border: 2px solid var(--primary-color);
+  padding: 6px 17px;
+  border-radius: 20px;
+  font-family: "Poppins";
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--button-primary-color);
+
+}
+
