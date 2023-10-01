@@ -1,7 +1,6 @@
 .landpagecontent{
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-top: 14vh;
 }
 .paragraphe{
@@ -11,9 +10,23 @@
   background-color: transparent;
   font-size: 35px;
   margin-bottom: 5%;
+  max-width: 20%;
 }
 .paragraphe img{
   position: absolute;
   top: -163px;
   left: -55px;
 }
+
+.landing-parag {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.landing-parag div {
+  display: flex;
+  gap: 1rem;
+}
+
