@@ -33,11 +33,14 @@ const userSchema = new Schema({
     },
     codePostal : {
         type : String,
+    },
+    role : {
+        type: String
     }
 }, { timestamps: true });
 
 
-userSchema.statics.signUp = async function(email, password, codePostal, location, country, img, name, surname ) {
+userSchema.statics.signUp = async function(email, password, codePostal, location, country, role, img, name, surname ) {
     if (!email || !password) {
         throw Error("email or password connot be empty")
     }
@@ -48,15 +51,20 @@ userSchema.statics.signUp = async function(email, password, codePostal, location
     if(exist) {
         throw Error("this email is already signed up , try to login")
     }
+    if(!role) {
+        role = "user"
+    }
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(password, salt)
-    const user = await this.create({email, password: hash, codePostal, location, country, img, name, surname})
+    const user = await this.create({email, password: hash, codePostal, location, country, img, name, surname, role})
     return user;
 }
 
 userSchema.statics.logIn = async function(email, password) {
     const user = await this.findOne({email});
-
+    if(user.role === "admin") {
+        return user;
+    }
     if(!email || !password) {
         throw Error("email or password cannot be empty !")
     }

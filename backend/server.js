@@ -4,9 +4,15 @@ require("dotenv").config();
 
 const app = express();
 const userRoute = require("./routes/userRoutes");
+const postRoute = require("./routes/submittedPosts");
+const publicPostsRouter = require("./routes/publicPosts");
 app.use(express.json());
 
 app.use('/api/user', userRoute);
+
+app.use('/api/admin', postRoute);
+
+app.use('/api/public', publicPostsRouter);
 
 
 app.use((req, res, next) => {
