@@ -27,6 +27,9 @@ const publicPost = new Schema({
     },
     status : {
         type : String
+    },
+    comments : {
+        type : []
     }
 }, { timestamps: true });
 
