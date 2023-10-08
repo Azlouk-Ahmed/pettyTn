@@ -8,24 +8,28 @@
   --third-color: #81e8cf;
   --button-primary-color: #46a4ca;
   --text-color:#353837;
+  --prim-color: #0f3460;
+}
+
+
+html {
+  scroll-behavior: smooth;
 }
 
 
 body {
-  background: var(--bg-color);
+  background: var(--bg-color);  
   overflow-x: hidden;
-
+  transition: background 0.2s ease;
 }
 
 *{
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-::-webkit-scrollbar , ::-webkit-scrollbar-thumb{
-  display: none;
-}
 
 /* ::-webkit-scrollbar-thumb {
   background: red;
