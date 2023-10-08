@@ -41,7 +41,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: white;
+  background: rgb(155, 155, 155);
   padding: 5px 3px;
 
 }

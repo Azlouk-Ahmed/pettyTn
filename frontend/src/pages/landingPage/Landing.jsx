@@ -3,6 +3,7 @@ import Header from '../../components/header/Header'
 import './landing.css'
 import { useState, useEffect } from 'react';
 import Footer from '../../components/footer/Footer';
+import News from '../../components/new/News';
 
 function Landing() {
     const [text, setText] = useState('');
@@ -27,7 +28,7 @@ function Landing() {
   return (
     <>
       
-    <div>
+    <div className='landing'>
      <Header />
       <section className="landpagecontent">
    <div className='paragraphe'>
@@ -51,9 +52,8 @@ function Landing() {
           <img src="\img\image_processing20220523-1623-1mqcn9i.png" alt="" srcset="" />
         </div>
       </section>
+      <News />
     </div>
-    
-    <Footer />
 
     </>
   )
