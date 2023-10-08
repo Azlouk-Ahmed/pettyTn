@@ -6,12 +6,15 @@ const app = express();
 const userRoute = require("./routes/userRoutes");
 const postRoute = require("./routes/submittedPosts");
 const publicPostsRouter = require("./routes/publicPosts");
+const requestsRouter = require("./routes/requests");
+
 app.use(express.json());
 
 // app.use((req, res, next) => {
 //     console.log(req.path + " " + req.method)
 //     next();
 // })
+app.use('/api/requests', requestsRouter);
 
 app.use('/api/user', userRoute);
 

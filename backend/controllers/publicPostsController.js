@@ -1,5 +1,5 @@
 
-const { default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 const publicPost = require("../models/publicPosts.js");
 const User = require("../models/user.js");
 
