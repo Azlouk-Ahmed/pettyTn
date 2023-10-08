@@ -8,8 +8,14 @@ function App() {
 
   return (
     <>
+<<<<<<< HEAD
     <Login />
     </>
+=======
+    <Signup />
+    dsf
+      </>
+>>>>>>> a60a1878e5897a65d991f1b86f28b2496e88e3b0
   )
 }
 
