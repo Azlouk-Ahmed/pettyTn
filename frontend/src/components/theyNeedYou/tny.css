@@ -1,0 +1,32 @@
+.they--need--you {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    position: relative;
+}
+
+.tny--pg {
+    display: flex;
+    width: 29%;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tny--pg h3{
+    width: 15rem;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.tny--pg button {
+    width: 40% ;
+}
+
+.wave {
+    position: absolute;
+    z-index: -1;
+    top: 5rem;
+    transform: scale(2.7);
+}
+

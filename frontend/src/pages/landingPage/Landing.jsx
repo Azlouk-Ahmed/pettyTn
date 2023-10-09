@@ -4,27 +4,30 @@ import './landing.css'
 import { useState, useEffect } from 'react';
 import Footer from '../../components/footer/Footer';
 import News from '../../components/new/News';
+import TheyNeedYou from '../../components/theyNeedYou/TheyNeedYou';
+import About from '../../components/about/About';
+import OurFrineds from '../../../meetourfriends/OurFrineds';
 
 function Landing() {
-    const [text, setText] = useState('');
+    const [text, setText] = useState('Welcome to Petty Tn!');
     const fullText = "Welcome to Petty Tn!";
   
-    useEffect(() => {
-      let currentIndex = 0;
+    // useEffect(() => {
+    //   let currentIndex = 0;
   
-      const intervalId = setInterval(() => {
-        if (currentIndex === fullText.length) {
-          clearInterval(intervalId);
-        } else {
-          setText(fullText.slice(0, currentIndex + 1));
-          currentIndex++;
-        }
-      }, 100); // Vous pouvez ajuster la vitesse de frappe en modifiant cet intervalle
+    //   const intervalId = setInterval(() => {
+    //     if (currentIndex === fullText.length) {
+    //       clearInterval(intervalId);
+    //     } else {
+    //       setText(fullText.slice(0, currentIndex + 1));
+    //       currentIndex++;
+    //     }
+    //   }, 100); // Vous pouvez ajuster la vitesse de frappe en modifiant cet intervalle
   
-      return () => {
-        clearInterval(intervalId);
-      };
-    }, []);
+    //   return () => {
+    //     clearInterval(intervalId);
+    //   };
+    // }, []);
   return (
     <>
       
@@ -33,10 +36,10 @@ function Landing() {
       <section className="landpagecontent">
    <div className='paragraphe'>
    <img src="\img\pate.png" alt="" />
-   <bold><h3>{text}</h3></bold>
+   <h3>{text}</h3>
         <p className='landing-parag'>
           Find your furry friend and give them a forever home. Our mission is to connect loving pet owners with adorable animals in need of a loving family. 
-          <div>
+          <span>
             <button className="primary--button">
               login
             </button>
@@ -44,15 +47,18 @@ function Landing() {
               view animals posts
             </button>
 
-          </div>
+          </span>
         </p>
    </div>     
 
         <div className="picture">
-          <img src="\img\image_processing20220523-1623-1mqcn9i.png" alt="" srcset="" />
+          <img src="\img\image_processing20220523-1623-1mqcn9i.png" alt="" />
         </div>
       </section>
       <News />
+      <TheyNeedYou />
+      <About />
+      <OurFrineds />
     </div>
 
     </>

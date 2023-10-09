@@ -1,0 +1,48 @@
+.about {
+    text-align: center;
+}
+
+.about--container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.about--container > h3{
+    font-size: 3rem;
+}
+
+.about--container > h3 p{
+    inherits: none;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.acheivments {
+    display: flex;
+    justify-content: center;
+    gap: 9rem;
+    padding: 0rem;
+}
+
+.numbers--box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 10px; 
+    max-width: 20%;
+}
+
+.numbers--box:nth-child(2) {
+    transform: scale(1.5);
+}
+
+.numbers--box > span{
+    font-size: 2rem;
+}
+.numbers--box > p {
+    color: var(--text-color);
+    font-size: 13px;
+}

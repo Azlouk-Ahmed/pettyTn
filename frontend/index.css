@@ -2,7 +2,7 @@
 
 
 :root {
-  --bg-color: #f8f9fb;
+  --bg-color: #f3f3f3;
   --primary-color: #6ec8f1;
   --secondary-color: #ffe68c;
   --third-color: #81e8cf;
@@ -16,6 +16,9 @@ html {
   scroll-behavior: smooth;
 }
 
+svg {
+  color: var(--secondary-color);
+}
 
 body {
   background: var(--bg-color);  

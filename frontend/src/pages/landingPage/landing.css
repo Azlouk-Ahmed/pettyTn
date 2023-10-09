@@ -1,4 +1,10 @@
 
+.landing {
+  display: flex;
+  gap: 5rem;
+  flex-direction: column;
+}
+
 .landpagecontent{
   display: flex;
   justify-content: space-between;
