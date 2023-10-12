@@ -34,6 +34,7 @@ h1 {
 }
 
 .Signupcont-container form input {
+  border: none;
   display: block;
   padding: 14.5px;
   width: 100%;
@@ -41,7 +42,6 @@ h1 {
   color: var(--color);
   outline: none;
   background-color: #9191911f;
-  border: none;
   border-radius: 5px;
   font-weight: 500;
   letter-spacing: 0.8px;
@@ -54,6 +54,7 @@ h1 {
 }
 
 .Signupcont-container form input:focus {
+  border: 2px solid var(--primary-color);
   box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.2);
   animation: wobble 0.3s ease-in;
   -webkit-animation: wobble 0.3s ease-in;
@@ -193,3 +194,52 @@ h1 {
       -o-transform: scale(1);
   }
 } 
+
+.plus--icon {
+  position: absolute;
+  top: -8px;
+  right: -13px;
+  background: white;
+  font-size: 1.5rem;
+  transition: 0.5s;
+  border-radius: 50%;
+}
+
+.input--image:hover .plus--icon {
+  transform: rotate(360deg);
+}
+
+.input--image{
+  all: inherit;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0rem 2rem;
+  color: white;
+  font-size: 2rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 7px;
+  cursor: pointer;
+  position: relative;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+
+}
+
+.input--image p {
+  color: black;
+  font-size: 12px;
+}
+
+.icon {
+  color: black;
+}
+.input--image span{
+  display: grid;
+}
+
+.input--image input {
+  display: none !important;
+}

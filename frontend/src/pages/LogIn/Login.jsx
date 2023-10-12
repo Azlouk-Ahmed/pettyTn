@@ -1,5 +1,6 @@
  import React, { useState, useEffect } from 'react';
  import './Login.css'; // Assurez-vous que le chemin est correct
+import { useLogin } from '../../hooks/useLogin';
 
  const themes = [
    {
@@ -36,19 +37,20 @@
    });
  };
  function Login() {
-   const [username, setUsername] = useState('');
+   const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
-   const handleUsernameChange = (e) => {
-     setUsername(e.target.value);
+   const {login, loading, error} = useLogin();
+   const handleemailChange = (e) => {
+     setEmail(e.target.value);
    };
 
    const handlePasswordChange = (e) => {
      setPassword(e.target.value);
    };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
-     // Ajoutez ici la logique pour traiter les données du formulaire, par exemple, envoyer une requête API de connexion.
+    await login(email, password);
    };
 
    useEffect(() => {
@@ -68,9 +70,9 @@
            <form onSubmit={handleSubmit}>
              <input
                type="text"
-               placeholder="USERNAME"
-               value={username}
-               onChange={handleUsernameChange}
+               placeholder="email"
+               value={email}
+               onChange={handleemailChange}
              />
              <input
                type="password"
@@ -78,9 +80,16 @@
                value={password}
                onChange={handlePasswordChange}
              />
-             <button className="opacity" type="submit">
-               LOGIN
+             <button className={`opacity ${(loading)? 'disabled' : ''}`} disabled={loading} type="submit" >
+               {
+                `${(loading)? 'loading ...' : 'login'}`
+               }
              </button>
+             {error && (
+                <div className="error">
+                  {error}
+                </div>
+             )}
            </form>
           <div className="register-forget opacity">
              <a href="">REGISTER</a>

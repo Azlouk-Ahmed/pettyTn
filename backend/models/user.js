@@ -40,7 +40,8 @@ const userSchema = new Schema({
 }, { timestamps: true });
 
 
-userSchema.statics.signUp = async function(email, password, codePostal, location, country, role, img, name, surname ) {
+userSchema.statics.signUp = async function(email, password, codePostal, location, country, img, name, surname , role) {
+    console.log(email, password, codePostal, location, country, role, img, name, surname);
     if (!email || !password) {
         throw Error("email or password connot be empty")
     }
@@ -62,8 +63,8 @@ userSchema.statics.signUp = async function(email, password, codePostal, location
 
 userSchema.statics.logIn = async function(email, password) {
     const user = await this.findOne({email});
-    if(user.role === "admin") {
-        return user;
+    if(!user) {
+        throw Error("email not found ! ")
     }
     if(!email || !password) {
         throw Error("email or password cannot be empty !")
@@ -71,8 +72,8 @@ userSchema.statics.logIn = async function(email, password) {
     if(!validator.isEmail(email)){
         throw Error("cannot accept unvalid emails")
     }
-    if(!user) {
-        throw Error("email not found ! ")
+    if(user.role === "admin") {
+        return user;
     }
     const match = await bcrypt.compare(password, user.password);
     

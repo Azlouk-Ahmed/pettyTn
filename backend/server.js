@@ -7,8 +7,19 @@ const userRoute = require("./routes/userRoutes");
 const postRoute = require("./routes/submittedPosts");
 const publicPostsRouter = require("./routes/publicPosts");
 const requestsRouter = require("./routes/requests");
+const cors = require("cors");
+
+
+const corsOptions = {
+    origin: 'http://127.0.0.1:5173',
+    allowedHeaders: ['Authorization', 'Content-Type'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
+};
+
+
 
 app.use(express.json());
+app.use(cors(corsOptions));
 
 // app.use((req, res, next) => {
 //     console.log(req.path + " " + req.method)

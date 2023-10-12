@@ -1,5 +1,8 @@
 import React,  { useState, useEffect } from 'react'
 import './Signup.css'
+import { CiImageOn } from "react-icons/ci";
+import { IoMdAdd } from "react-icons/io";
+import { useSign } from '../../hooks/useSignUp';
 
 const themes = [
   {
@@ -38,13 +41,15 @@ const displayThemeButtons = () => {
 
 function Signup() {
   const [email, setEmail] = useState('');
+  const [role, setRole] = useState('');
   const [password, setPassword] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [image, setImage] = useState(null);
+  const [name, setname] = useState('');
+  const [surname, setsurname] = useState('');
+  const [imagePath, setImagePath] = useState("");
   const [country, setCountry] = useState('');
   const [location, setLocation] = useState('');
-  const [postalCode, setPostalCode] = useState('');
+  const [codePostal, setcodePostal] = useState('');
+  const {signup, loading, error} = useSign();
   useEffect(() => {
     displayThemeButtons();
   }, []);
@@ -56,18 +61,12 @@ function Signup() {
     setPassword(e.target.value);
   };
 
-  const handleFirstNameChange = (e) => {
-    setFirstName(e.target.value);
+  const handlenameChange = (e) => {
+    setname(e.target.value);
   };
 
-  const handleLastNameChange = (e) => {
-    setLastName(e.target.value);
-  };
-
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    // Ajoutez ici la logique de validation pour vérifier que le fichier est une image valide.
-    setImage(file);
+  const handlesurnameChange = (e) => {
+    setsurname(e.target.value);
   };
 
   const handleCountryChange = (e) => {
@@ -78,13 +77,13 @@ function Signup() {
     setLocation(e.target.value);
   };
 
-  const handlePostalCodeChange = (e) => {
-    setPostalCode(e.target.value);
+  const handlecodePostalChange = (e) => {
+    setcodePostal(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
-    // Ajoutez ici la logique pour traiter les données du formulaire, par exemple, envoyer une requête API d'inscription.
+    await signup(email, password, codePostal, location, country, imagePath, name, surname, role );
   };
 
   return (
@@ -118,29 +117,35 @@ function Signup() {
         <label>Nom:</label>
         <input
           type="text"
-          value={lastName}
-          onChange={handleLastNameChange}
+          value={surname}
+          onChange={handlesurnameChange}
           required
         />
 
         <label>Prénom:</label>
         <input
           type="text"
-          value={firstName}
-          onChange={handleFirstNameChange}
+          value={name}
+          onChange={handlenameChange}
           required
         />
 
         
            </div>
        <div className="second" style={{width: '45%'}}>
-       <label>Image de profil:</label>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-          required
-        />
+       <label className="input--image" htmlFor="inputTag">
+            <IoMdAdd className="plus--icon icon" />
+            <span>
+              <CiImageOn className="icon" />
+            </span>
+            <input
+              type="file"
+              id="inputTag"
+              accept="image/png, image/jpg, image/gif, image/jpeg"
+              onChange={(e) => {const file = e.target.files[0];setImagePath(file.name); console.log(imagePath);}}
+            />
+            <p>{imagePath}</p>
+      </label>
        <label>Pays:</label>
         <input
           type="text"
@@ -158,14 +163,21 @@ function Signup() {
         <label>Code Postal:</label>
         <input
           type="text"
-          value={postalCode}
-          onChange={handlePostalCodeChange}
+          value={codePostal}
+          onChange={handlecodePostalChange}
         />
        </div>
            </div>
-           <button className="opacity" type="submit">
-               Sign Up
+           <button className={`opacity ${(loading)? 'disabled' : ''}`} disabled={loading} type="submit" >
+               {
+                `${(loading)? 'loading ...' : 'signup'}`
+               }
              </button>
+             {error && (
+                <div className="error">
+                  {error}
+                </div>
+             )}
           <div className="register-forget opacity">
              <a href="">S'INSCRIRE</a>
              <a href="">LOG IN</a>

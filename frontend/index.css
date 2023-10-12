@@ -9,6 +9,7 @@
   --button-primary-color: #46a4ca;
   --text-color:#353837;
   --prim-color: #0f3460;
+  --error: #e7195a;
 }
 
 
@@ -75,5 +76,24 @@ body {
   font-size: 14px;
   cursor: pointer;
   color: var(--button-primary-color);
+
+}
+
+button:disabled {
+  cursor: no-drop;
+  background: red;
+}
+
+.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.disabled {
+  background-color:  #dcdcdc !important;
 
 }
