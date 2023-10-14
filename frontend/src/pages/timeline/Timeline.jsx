@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import './timeline.css'
 import axios from 'axios'
 import Post from '../../components/post/Post';
+import { usePostsContext } from '../../hooks/usePostsContext';
 
 function Timeline() {
-
-    const [posts, setPosts] = useState(null);
-    useEffect(() => {
-      axios.get("http://localhost:5000/api/public/posts")
-      .then((Response) => {
-        setPosts(Response.data);
+  const {posts, dispatch} = usePostsContext();
+  useEffect(() => {
+    axios.get("http://localhost:5000/api/public/posts")
+    .then((Response) => {
+        dispatch({type : "SET__POSTS", payload : Response.data})
       })
       .catch(Error => {
         console.log(Error);

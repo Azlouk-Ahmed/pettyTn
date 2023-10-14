@@ -4,30 +4,29 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import CommentModal from '../comments modal/CommentModal';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import axios from 'axios';
+import { usePostsContext } from '../../hooks/usePostsContext';
 
 
 
 function Post(props) {
+  const {dispatch} = usePostsContext();
     const [comment, setComment] = useState("");
     const {auth} = useAuthContext();
     const {post} = props
     const handleComment = async () => {
-        try {
-          const response = await axios.put(`http://localhost:5000/api/public/comment/${post._id}`, {comment}, {
-            headers: {
-              'authorization': `Bearer ${auth.token}`
-            }
-          });
-      
-          if (response.status === 200) {
-            setComment("");
-          } else {
-            console.error('Request failed with status code:', response.status);
-            console.error('Response data:', response.data);
-          }
-        } catch (error) {
-          console.error('Error:', error);
+      axios
+      .put(`http://localhost:5000/api/public/comment/${post._id}`, { comment }, {
+        headers: {
+          'authorization': `Bearer ${auth.token}`
         }
+      })
+      .then(response => {
+        setComment("");
+        dispatch({type : "UPDATE__POST",payload : response.data})
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
       };
   return (
       <div className="post-details">

@@ -7,6 +7,7 @@ import Header from './components/header/Header'
 import { BrowserRouter, Routes, Route,Navigate } from 'react-router-dom'
 import Timeline from './pages/timeline/Timeline'
 import '@mantine/core/styles.css';
+import { usePostsContext } from './hooks/usePostsContext'
 
 
 
