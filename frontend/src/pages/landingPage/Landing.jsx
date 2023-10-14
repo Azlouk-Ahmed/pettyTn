@@ -6,7 +6,7 @@ import Footer from '../../components/footer/Footer';
 import News from '../../components/new/News';
 import TheyNeedYou from '../../components/theyNeedYou/TheyNeedYou';
 import About from '../../components/about/About';
-import OurFrineds from '../../../meetourfriends/OurFrineds';
+import OurFrineds from '../../components/meetourfriends/OurFrineds';
 
 function Landing() {
     const [text, setText] = useState('Welcome to Petty Tn!');
@@ -32,7 +32,6 @@ function Landing() {
     <>
       
     <div className='landing'>
-     <Header />
       <section className="landpagecontent">
    <div className='paragraphe'>
    <img src="\img\pate.png" alt="" />

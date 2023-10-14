@@ -17,10 +17,6 @@ html {
   scroll-behavior: smooth;
 }
 
-svg {
-  color: var(--secondary-color);
-}
-
 body {
   background: var(--bg-color);  
   overflow-x: hidden;
@@ -64,8 +60,21 @@ body {
   font-family: "Poppins";
   font-size: 14px;
   cursor: pointer;
-
+  
   background: var(--button-primary-color);
+}
+
+.logout {
+  color: #fff;
+  border: none;
+  padding: 6px 17px;
+  border-radius: 7px;
+  font-family: "Poppins";
+  font-size: 14px;
+  cursor: pointer;
+  
+  background: var(--error);
+
 }
 
 .secondary--button {
@@ -76,9 +85,19 @@ body {
   font-size: 14px;
   cursor: pointer;
   color: var(--button-primary-color);
-
+  
 }
 
+.order-now-btn {
+  padding: 6px 17px;
+  border-radius: 7px;
+  font-family: "Poppins";
+  font-size: 14px;
+  width: fit-content;
+  margin: 0 0 0 auto;
+  cursor: pointer;
+  background: var(--secondary-color);
+}
 button:disabled {
   cursor: no-drop;
   background: red;

@@ -47,7 +47,7 @@ const updatePostStatus = async (req, res) => {
             return res.status(404).json({ "message": "Post not found" });
         }
 
-        const newStatus = post.status === "available" ? "not available" : "available";
+        const newStatus = post.status === "available" ? "not--available" : "available";
 
         const updatedPost = await publicPost.findByIdAndUpdate(
             postID,
@@ -75,7 +75,7 @@ const addComment = async (req, res) => {
         return res.status(404).json({"error" : "post not found "});
     }
 
-    post.comments.push({ user : {name : user.name, surname : user.surname , img : user.img , memberFrom : user.createdAt } , comment });
+    post.comments.push({ user : {name : user.name, surname : user.surname , img : user.img , createdAt : user.createdAt } , comment });
         await post.save();
     return res.status(200).json(post)
 }

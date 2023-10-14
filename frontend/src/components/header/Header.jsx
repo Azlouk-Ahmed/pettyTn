@@ -1,8 +1,11 @@
 import React from 'react';
 import './Header.css'
 import { useAuthContext } from '../../hooks/useAuthContext';
+import { Link } from 'react-router-dom'
+import { useLogout } from '../../hooks/useLogout';
 
 function Header() {
+  const { logout } = useLogout()
   const {auth} = useAuthContext();
   let name = "";
   let surname = "";
@@ -13,23 +16,36 @@ function Header() {
   } else {
     console.log("no user");
   }
+
+  const handleClick = () => {
+    logout();
+  }
   return (
     <div className="nav-bar-container">
       <div className='logocontainer'>
-      <img src="\img\logo1.png" alt="" className='logo'/>
+      <Link to="/">
+        <img src="\img\logo1.png" alt="" className='logo'/>
+      </Link>
       </div>
-        <div className="nav-bar-links">
+        {/* <div className="nav-bar-links">
         <ul >
           <li><a href="#">Home</a></li>
           <li><a href="#">Pets</a></li>
           <li><a href="#">About us</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
-      </div>
-      <div className='login'>
-      <a href="#">Log in</a>
-      <a href="#">Sign up</a>
-      </div>
+      </div> */}
+      {auth && <Link className="secondary--button" to="/timeline">
+        view posts
+      </Link>}
+      {!auth && (
+        <div className='login'>
+          <Link to="/login">Log in</Link>
+          <Link to="/signup">Sign up</Link>
+        </div>
+      )}
+
+      
       
       <div className="profil">
       <div className="profilname">
@@ -48,7 +64,11 @@ function Header() {
         )}
       </div>
       </div>
-      
+      {auth && (
+        <div>
+          <button onClick={handleClick} className='logout'>logout</button>
+        </div>
+      )}
     </div>
   )
 }
