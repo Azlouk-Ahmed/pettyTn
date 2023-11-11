@@ -14,11 +14,15 @@ import { usePostsContext } from './hooks/usePostsContext'
 
 function App() {
   const {auth,dispatch} = useAuthContext();
-  useEffect(()=> {
-    if(localStorage.length>0){
-      dispatch({type: "LOGIN",payload: JSON.parse(localStorage.getItem("auth"))})
+  useEffect(() => {
+    console.log("useEffect hook is running");
+    console.log("localStorage length:", localStorage.length);
+  
+    if (localStorage.length > 0) {
+      console.log("Dispatching LOGIN action");
+      dispatch({ type: "LOGIN", payload: JSON.parse(localStorage.getItem("auth")) });
     }
-  },[dispatch])
+  }, []);
   return (
     <div className='app'>
       <BrowserRouter>
@@ -30,7 +34,6 @@ function App() {
         <Route path='/timeline' element={<Timeline />} />
       </Routes>
       </BrowserRouter>
-      {/* <Signup /> */}
     </div>
   )
 }
