@@ -7,15 +7,6 @@ import { useLogout } from '../../hooks/useLogout';
 function Header() {
   const { logout } = useLogout()
   const {auth} = useAuthContext();
-  let name = "";
-  let surname = "";
-  if (auth && auth.user) {
-    name = auth.user.name || "";
-    surname = auth.user.surname || "";
-    console.log(name, surname);
-  } else {
-    console.log("no user");
-  }
 
   const handleClick = () => {
     logout();
@@ -27,22 +18,14 @@ function Header() {
         <img src="\img\logo1.png" alt="" className='logo'/>
       </Link>
       </div>
-        {/* <div className="nav-bar-links">
-        <ul >
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Pets</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div> */}
       {auth && <Link to="/timeline">
         view posts
       </Link>}
-      {
-        auth.user.role === "admin" &&<Link to="/pending">
-        pending posts
-      </Link>
-      }
+      {auth && auth.user.role === "admin" && (
+        <Link to="/pending">
+          pending posts
+        </Link>
+      )}
       {!auth && (
         <div className='login'>
           <Link to="/login">Log in</Link>
@@ -56,7 +39,7 @@ function Header() {
       <div className="profilname">
         {auth && (
           <p className='nom'>
-            {name} {surname}
+            {auth.user.name} {auth.user.surname}
           </p>
 
         )}

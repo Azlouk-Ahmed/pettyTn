@@ -59,7 +59,10 @@ function Post(props) {
         </div>
         <div className="input">
             <div className='user-info-wrapper'>
-            <img src={(auth.user.img)?"/img/"+auth.user.img : '/img/default.png'}/>
+              {
+                auth &&
+                  <img src={(auth.user.img)?"/img/"+auth.user.img : '/img/default.png'}/>
+              }
             </div>
             <div>
             <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} id="" /> <button onClick={handleComment} className="primary--button">add comment</button>

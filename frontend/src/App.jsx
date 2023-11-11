@@ -19,8 +19,9 @@ function App() {
     console.log("localStorage length:", localStorage.length);
   
     if (localStorage.length > 0) {
-      console.log("Dispatching LOGIN action");
+      console.log(JSON.parse(localStorage.getItem("auth")));
       dispatch({ type: "LOGIN", payload: JSON.parse(localStorage.getItem("auth")) });
+      //console.log(auth);
     }
   }, []);
   return (
