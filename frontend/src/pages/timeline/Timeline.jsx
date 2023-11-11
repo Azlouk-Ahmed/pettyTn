@@ -9,6 +9,7 @@ function Timeline() {
   useEffect(() => {
     axios.get("http://localhost:5000/api/public/posts")
     .then((Response) => {
+        console.log(Response.data);
         dispatch({type : "SET__POSTS", payload : Response.data})
       })
       .catch(Error => {

@@ -35,9 +35,14 @@ function Header() {
           <li><a href="#">Contact</a></li>
         </ul>
       </div> */}
-      {auth && <Link className="secondary--button" to="/timeline">
+      {auth && <Link to="/timeline">
         view posts
       </Link>}
+      {
+        auth.user.role === "admin" &&<Link to="/pending">
+        pending posts
+      </Link>
+      }
       {!auth && (
         <div className='login'>
           <Link to="/login">Log in</Link>
