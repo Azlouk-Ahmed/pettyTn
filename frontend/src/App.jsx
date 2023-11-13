@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route,Navigate } from 'react-router-dom'
 import Timeline from './pages/timeline/Timeline'
 import '@mantine/core/styles.css';
 import { usePostsContext } from './hooks/usePostsContext'
+import Pending from './pages/pending/Pending'
 
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path='/login' element={!auth? <Login /> : <Navigate to="/" />}  />
         <Route path='/signup' element={!auth? <Signup /> : <Navigate to="/" />} />
         <Route path='/timeline' element={<Timeline />} />
+        <Route path='/pending' element={<Pending />} />
       </Routes>
       </BrowserRouter>
     </div>

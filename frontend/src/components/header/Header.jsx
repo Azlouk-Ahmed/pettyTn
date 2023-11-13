@@ -8,6 +8,7 @@ function Header() {
   const { logout } = useLogout()
   const {auth} = useAuthContext();
 
+
   const handleClick = () => {
     logout();
   }

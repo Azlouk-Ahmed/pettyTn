@@ -116,3 +116,7 @@ button:disabled {
   background-color:  #dcdcdc !important;
 
 }
+
+.app {
+  margin-top: 6rem;
+}
