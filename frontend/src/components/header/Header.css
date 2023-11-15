@@ -124,3 +124,14 @@ box-shadow: 1px 3px  rgba(0, 0, 0, 0.2) ;
 
 }
 
+.logout {
+    color: #fff;
+    border: none;
+    padding: 6px 17px;
+    border-radius: 20px;
+    font-family: "Poppins";
+    font-size: 14px;
+    cursor: pointer;
+    background: #fed157;
+}
+

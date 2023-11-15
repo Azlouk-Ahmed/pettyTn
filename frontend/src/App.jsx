@@ -9,6 +9,7 @@ import Timeline from './pages/timeline/Timeline'
 import '@mantine/core/styles.css';
 import { usePostsContext } from './hooks/usePostsContext'
 import Pending from './pages/pending/Pending'
+import Post from './components/post/Post'
 
 
 
@@ -27,7 +28,7 @@ function App() {
   }, []);
   return (
     <div className='app'>
-      <BrowserRouter>
+      {/* <BrowserRouter>
       <Header />
       <Routes>
         <Route path='/' element={auth? <Landing /> : <Navigate to="/login" />} />
@@ -36,7 +37,8 @@ function App() {
         <Route path='/timeline' element={<Timeline />} />
         <Route path='/pending' element={<Pending />} />
       </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      
     </div>
   )
 }

@@ -19,11 +19,15 @@ function Header() {
         <img src="\img\logo1.png" alt="" className='logo'/>
       </Link>
       </div>
-      {auth && <Link to="/timeline">
-        view posts
-      </Link>}
+      <Link to="/" style={{backgroundColor:"#fed157", width:"105px", height:"35px", borderRadius:"27px", display:"flex", justifyContent:"center", alignItems:"center", color:"white"}}> 
+         add post
+        </Link> 
+      {auth &&
+        <Link to="/timeline" style={{backgroundColor:"#fed157", width:"105px", height:"35px", borderRadius:"27px", display:"flex", justifyContent:"center", alignItems:"center", color:"white"}}>
+         view posts
+        </Link>}
       {auth && auth.user.role === "admin" && (
-        <Link to="/pending">
+        <Link to="/pending" style={{backgroundColor:"#fed157", width:"105px", height:"35px", borderRadius:"27px", display:"flex", justifyContent:"center", alignItems:"center", color:"white"}}>
           pending posts
         </Link>
       )}

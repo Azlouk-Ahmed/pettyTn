@@ -39,10 +39,10 @@ function Landing() {
         <p className='landing-parag'>
           Find your furry friend and give them a forever home. Our mission is to connect loving pet owners with adorable animals in need of a loving family. 
           <span>
-            <button className="primary--button">
+            <button className="primary--button" style={{margin:"1%"}}>
               login
             </button>
-            <button className="secondary--button">
+            <button className="secondary--button" style={{margin:"1%"}}>
               view animals posts
             </button>
 
@@ -58,6 +58,7 @@ function Landing() {
       <TheyNeedYou />
       <About />
       <OurFrineds />
+      <Footer />
     </div>
 
     </>
