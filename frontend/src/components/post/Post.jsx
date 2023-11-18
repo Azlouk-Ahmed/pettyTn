@@ -11,6 +11,7 @@ import { usePostsContext } from '../../hooks/usePostsContext';
 function Post(props) {
   const {dispatch} = usePostsContext();
     const [comment, setComment] = useState("");
+    const [accepted, setAccepted] = useState(false);
     const {auth} = useAuthContext();
     const {post} = props
     const handleComment = async () => {
@@ -28,6 +29,23 @@ function Post(props) {
         console.error('Error:', error);
       });
       };
+      const sendReq = async (id) => {
+        setAccepted(true)
+        try {
+          if(auth){
+            const response = await axios.post(`http://localhost:5000/api/requests/${id}`, {
+            }, {
+              headers: {
+                Authorization: `Bearer ${auth.token}`,
+              },
+            });
+            console.log(response);
+
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      }
   return (
       <div className="post-details">
           <CommentModal comments={post.comments} />
@@ -54,9 +72,10 @@ function Post(props) {
       <div className="nb">
         <span>important</span>  : Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, expedita.
       </div>
-        <div className="order-now-btn">
+        {post.status == "available" && !accepted && <div className="order-now-btn" onClick={() =>sendReq(post._id)}>
             order now
-        </div>
+        </div>}
+        {accepted && <div className='accepted'>request has been submitted to admins</div>}
         <div className="input">
             <div className='user-info-wrapper'>
               {

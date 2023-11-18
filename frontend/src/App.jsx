@@ -10,6 +10,7 @@ import '@mantine/core/styles.css';
 import { usePostsContext } from './hooks/usePostsContext'
 import Pending from './pages/pending/Pending'
 import Post from './components/post/Post'
+import Requests from './pages/requests/Requests'
 
 
 
@@ -28,16 +29,17 @@ function App() {
   }, []);
   return (
     <div className='app'>
-      {/* <BrowserRouter>
+      <BrowserRouter>
       <Header />
       <Routes>
         <Route path='/' element={auth? <Landing /> : <Navigate to="/login" />} />
         <Route path='/login' element={!auth? <Login /> : <Navigate to="/" />}  />
         <Route path='/signup' element={!auth? <Signup /> : <Navigate to="/" />} />
-        <Route path='/timeline' element={<Timeline />} />
-        <Route path='/pending' element={<Pending />} />
+        <Route path='/timeline' element={auth ? <Timeline /> : <Navigate to="/login" />} />
+        <Route path='/pending' element={auth && auth.user.role === "admin" ? <Pending /> : <Navigate to="/login" />} />
+        <Route path='/requests' element={auth && auth.user.role === "admin" ?<Requests /> : <Navigate to="/login" />} />
       </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
       
     </div>
   )

@@ -300,3 +300,7 @@ thead th.active,tbody td.active {
     gap: 7px;
     border: none;
 }
+
+.space-b {
+    justify-content: space-between;
+}
