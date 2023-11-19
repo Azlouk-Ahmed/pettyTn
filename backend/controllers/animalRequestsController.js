@@ -5,7 +5,7 @@ const User = require("../models/user.js");
 
 const requestList = async (req, res) => {
     try {
-        const requests = await AN__REQ.find({});
+        const requests = await AN__REQ.find({}).sort({ createdAt: -1 });
         return res.status(200).json(requests);
     } catch (error) {
         return res.status(500).json({"error" : error});
@@ -38,7 +38,7 @@ const delReq = async (req, res) => {
     if(!mongoose.Types.ObjectId.isValid(postID)){
         return res.status(400).json({"error" : "invalid id type"});
     }
-    const post = await publicPost.findByIdAndDelete(postID);
+    const post = await AN__REQ.findByIdAndDelete(postID);
     if (!post) {
         return res.status(404).json({"error" : "post not found"});
     }

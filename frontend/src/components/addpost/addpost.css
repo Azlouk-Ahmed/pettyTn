@@ -16,7 +16,7 @@
 .add-post-form {
   max-width: 23%;
   padding: 2%;
-  border: 1px  ;
+  border: 1px;
   background: #fff;
   border-radius: 4px;
   border-radius: 5px;
@@ -24,6 +24,13 @@
   position: fixed;
   top: 8rem;
   left: 1rem;
+  height: 81vh;
+  
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
 }
 
 /* label {

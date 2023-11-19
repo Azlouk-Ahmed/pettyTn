@@ -48,6 +48,17 @@ a {
     transition: .25s ease;
 }
 
+a:hover {
+    color:  var(--primary-color);
+}
+
+.links {
+    display: flex;
+    gap: 1rem;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
 ul {
     display: flex;
     flex-wrap: wrap;
@@ -124,16 +135,20 @@ box-shadow: 1px 3px  rgba(0, 0, 0, 0.2) ;
 
 }
 
+
+
 .logout {
     color: #fff;
     border: none;
     padding: 6px 17px;
-    border-radius: 20px;
+    border-radius: 7px;
     font-family: "Poppins";
     font-size: 14px;
     cursor: pointer;
-    background: #fed157;
-}
+    
+    background: var(--error);
+  
+  }
 
 .header-link:hover{
  color: var(--primary-color);

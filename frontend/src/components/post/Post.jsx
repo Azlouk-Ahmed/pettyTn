@@ -12,6 +12,7 @@ import Addpost from '../addpost/Addpost';
 function Post(props) {
   const {dispatch} = usePostsContext();
     const [comment, setComment] = useState("");
+    const [accepted, setAccepted] = useState(false);
     const {auth} = useAuthContext();
     const {post} = props
     const handleComment = async () => {
@@ -29,6 +30,23 @@ function Post(props) {
         console.error('Error:', error);
       });
       };
+      const sendReq = async (id) => {
+        setAccepted(true)
+        try {
+          if(auth.token){
+            const response = await axios.post(`http://localhost:5000/api/requests/${id}`, {
+            }, {
+              headers: {
+                Authorization: `Bearer ${auth.token}`,
+              },
+            });
+            console.log(response);
+
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      }
   return (
 <>
     <div className="post-details">
@@ -44,7 +62,7 @@ function Post(props) {
               })}</p>
           </div>
         </div>
-        <span className='contact'>conact :  <span> {post.contactMail}</span></span>
+        <span className='contact'>conact :  <span> {post.user.email}</span></span>
       </div>
       <div className="post-content">
         <h4>{post.title}</h4>
@@ -56,9 +74,10 @@ function Post(props) {
       <div className="nb">
         <span>important</span>  : Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, expedita.
       </div>
-        <div className="order-now-btn">
+        {post.status == "available" && !accepted && <div className="order-now-btn" onClick={() =>sendReq(post._id)}>
             order now
-        </div>
+        </div>}
+        {accepted && <div className='accepted'>request has been submitted to admins</div>}
         <div className="input">
             <div className='user-info-wrapper'>
               {

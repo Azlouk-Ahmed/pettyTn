@@ -36,9 +36,9 @@ function Timeline() {
       {loading == true ? (
         <Loading />
       ) : (
-        (posts.length === 0) ? (
+        (posts && posts.length === 0) ? (
           <div>No posts yet</div>
-        ) : (
+        ) : ( posts &&
           posts.map((post) => (
             <Post key={post._id} post={post} />
           ))

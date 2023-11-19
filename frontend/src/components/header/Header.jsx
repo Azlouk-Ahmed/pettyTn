@@ -19,28 +19,30 @@ function Header() {
         <img src="\img\logo1.png" alt="" className='logo'/>
       </Link>
       </div>
-      <div className='header-div-links'>
-      <Link to="/" className='header-link'> 
-         add post
-        </Link> 
+      <div className="links">
+
       {auth &&
-        <Link to="/timeline" className='header-link'>
+        <Link to="/timeline">
          view posts
         </Link>}
       {auth && auth.user.role === "admin" && (
-        <Link to="/pending" className='header-link'>
+        <Link to="/pending">
           pending posts
         </Link>
       )}
+
+      {auth && auth.user.role === "admin" && (
+        <Link to="/requests">
+          requests
+        </Link>
+      )}
+      </div>
       {!auth && (
         <div className='login'>
           <Link to="/login">Log in</Link>
           <Link to="/signup">Sign up</Link>
         </div>
       )}
-      </div>
-      
-      
 
       
       

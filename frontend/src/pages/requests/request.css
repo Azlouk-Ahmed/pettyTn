@@ -1,0 +1,44 @@
+.requests {
+    padding: 2rem 4rem;
+}
+
+.requests h3 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.requests--container {
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.r-color {
+    color: var(--error) !important;
+    font-weight: bold;
+}
+
+.g-color {
+    color:var(--primary-color);
+    font-weight: bold;
+
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.accepted {
+    border-radius: 7px;
+    background: var(--third-color);
+    padding: 1rem 1rem;
+}
+.rejected {
+    border-radius: 7px;
+    background: #ff8484;
+    padding: 1rem 1rem;
+}
