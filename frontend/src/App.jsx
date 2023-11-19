@@ -28,7 +28,7 @@ function App() {
   }, []);
   return (
     <div className='app'>
-      {/* <BrowserRouter>
+      <BrowserRouter>
       <Header />
       <Routes>
         <Route path='/' element={auth? <Landing /> : <Navigate to="/login" />} />
@@ -37,8 +37,7 @@ function App() {
         <Route path='/timeline' element={<Timeline />} />
         <Route path='/pending' element={<Pending />} />
       </Routes>
-      </BrowserRouter> */}
-      
+      </BrowserRouter>
     </div>
   )
 }

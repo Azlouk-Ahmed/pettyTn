@@ -19,15 +19,16 @@ function Header() {
         <img src="\img\logo1.png" alt="" className='logo'/>
       </Link>
       </div>
-      <Link to="/" style={{backgroundColor:"#fed157", width:"105px", height:"35px", borderRadius:"27px", display:"flex", justifyContent:"center", alignItems:"center", color:"white"}}> 
+      <div className='header-div-links'>
+      <Link to="/" className='header-link'> 
          add post
         </Link> 
       {auth &&
-        <Link to="/timeline" style={{backgroundColor:"#fed157", width:"105px", height:"35px", borderRadius:"27px", display:"flex", justifyContent:"center", alignItems:"center", color:"white"}}>
+        <Link to="/timeline" className='header-link'>
          view posts
         </Link>}
       {auth && auth.user.role === "admin" && (
-        <Link to="/pending" style={{backgroundColor:"#fed157", width:"105px", height:"35px", borderRadius:"27px", display:"flex", justifyContent:"center", alignItems:"center", color:"white"}}>
+        <Link to="/pending" className='header-link'>
           pending posts
         </Link>
       )}
@@ -37,6 +38,9 @@ function Header() {
           <Link to="/signup">Sign up</Link>
         </div>
       )}
+      </div>
+      
+      
 
       
       

@@ -5,6 +5,7 @@ import CommentModal from '../comments modal/CommentModal';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import axios from 'axios';
 import { usePostsContext } from '../../hooks/usePostsContext';
+import Addpost from '../addpost/Addpost';
 
 
 
@@ -29,7 +30,8 @@ function Post(props) {
       });
       };
   return (
-      <div className="post-details">
+<>
+    <div className="post-details">
           <CommentModal comments={post.comments} />
         <span className={post.status}> {post.status}</span>
       <div className="user-info">
@@ -68,8 +70,9 @@ function Post(props) {
             <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} id="" /> <button onClick={handleComment} className="primary--button">add comment</button>
             </div>
         </div>
-
-    </div>
+    </div> 
+  
+</>
   );
 }
 

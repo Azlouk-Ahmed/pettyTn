@@ -5,6 +5,8 @@ import Post from '../../components/post/Post';
 import Header from "../../components/header/Header"
 import { usePostsContext } from '../../hooks/usePostsContext';
 import Loading from '../../components/loading/Loading';
+import Addpost from '../../components/addpost/Addpost';
+import Search from '../../components/search/Search'
 
 function Timeline() {
   const {posts, dispatch} = usePostsContext();
@@ -27,6 +29,10 @@ function Timeline() {
     <div className='timeline'>
     
       <Header />
+      
+      <Addpost />
+      
+      <Search />
       {loading == true ? (
         <Loading />
       ) : (
@@ -38,6 +44,7 @@ function Timeline() {
           ))
         )
       )}
+      
     </div>
   )
 }
