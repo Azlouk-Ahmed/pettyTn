@@ -60,11 +60,11 @@ function Post(props) {
               })}</p>
           </div>
         </div>
-        <span className='contact'>conact :  <span> {post.contactMail}</span></span>
+        <span className='contact'>contact :  <span> {post.user.email}</span></span>
       </div>
       <div className="post-content">
         <h4>{post.title}</h4>
-        <p> {post.description} Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, eveniet eius? Molestiae eligendi, minus reiciendis magni quia voluptate error debitis cumque eius perferendis illo illum possimus consectetur quisquam eveniet quibusdam? </p>
+        <p> {post.description}  </p>
         <div className="post-image-holder">
           <img className="post-img" src={post.animalImg} alt="" />
         </div>

@@ -5,6 +5,7 @@ import Post from '../../components/post/Post';
 import Header from "../../components/header/Header"
 import { usePostsContext } from '../../hooks/usePostsContext';
 import Loading from '../../components/loading/Loading';
+import PostForm from '../../components/addPost/PostForm';
 
 function Timeline() {
   const {posts, dispatch} = usePostsContext();
@@ -27,6 +28,7 @@ function Timeline() {
     <div className='timeline'>
     
       <Header />
+      <PostForm />
       {loading == true ? (
         <Loading />
       ) : (

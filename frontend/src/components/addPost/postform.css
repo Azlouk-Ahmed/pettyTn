@@ -1,0 +1,48 @@
+.postform {
+    display: flex;
+    position: fixed;
+    left: 10px;
+    top: 8rem;
+    flex-direction: column;
+    gap: 2rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    box-shadow: 0px 4px 13px #c7c7c7;
+}
+
+.description-container,
+.title-container,
+.animalImg-container,
+.nb-container {
+    position: relative;
+}
+
+.postform h3 {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.postform > div > label {
+    position: absolute;
+    font-size: 13px;
+    left: 23px;
+    top: -10px;
+    background: white;
+    padding: 0 5px;
+}
+
+.postform > div > input,textarea {
+    outline: none;
+    height: 2.5rem;
+    border: 3px solid var(--third-color);
+    border-radius: 7px;
+    width: 19rem;
+    padding: 7px;
+}
+
+.postform textarea {
+    min-height: 7rem;
+    max-width: 19rem;
+}
