@@ -150,3 +150,13 @@ box-shadow: 1px 3px  rgba(0, 0, 0, 0.2) ;
   
   }
 
+.header-link:hover{
+ color: var(--primary-color);
+}
+
+.header-div-links{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

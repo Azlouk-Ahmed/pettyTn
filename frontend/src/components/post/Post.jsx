@@ -5,6 +5,7 @@ import CommentModal from '../comments modal/CommentModal';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import axios from 'axios';
 import { usePostsContext } from '../../hooks/usePostsContext';
+import { Link } from 'react-router-dom';
 
 
 
@@ -13,7 +14,7 @@ function Post(props) {
     const [comment, setComment] = useState("");
     const [accepted, setAccepted] = useState(false);
     const {auth} = useAuthContext();
-    const {post} = props
+    const {post} = props;
     const handleComment = async () => {
       axios
       .put(`http://localhost:5000/api/public/comment/${post._id}`, { comment }, {
@@ -32,7 +33,7 @@ function Post(props) {
       const sendReq = async (id) => {
         setAccepted(true)
         try {
-          if(auth){
+          if(auth.token){
             const response = await axios.post(`http://localhost:5000/api/requests/${id}`, {
             }, {
               headers: {
@@ -47,7 +48,8 @@ function Post(props) {
         }
       }
   return (
-      <div className="post-details">
+<>
+    <div className="post-details">
           <CommentModal comments={post.comments} />
         <span className={post.status}> {post.status}</span>
       <div className="user-info">
@@ -60,7 +62,7 @@ function Post(props) {
               })}</p>
           </div>
         </div>
-        <span className='contact'>contact :  <span> {post.user.email}</span></span>
+        <span className='contact'>conact : <Link to={`/timeline/contact/${post.user.email}/${post.user.name}`}> <span> {post.user.email}</span> </Link></span>
       </div>
       <div className="post-content">
         <h4>{post.title}</h4>
@@ -70,7 +72,7 @@ function Post(props) {
         </div>
       </div>
       <div className="nb">
-        <span>important</span>  : Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, expedita.
+        <span>important</span>  : {post.nb}
       </div>
         {post.status == "available" && !accepted && <div className="order-now-btn" onClick={() =>sendReq(post._id)}>
             order now
@@ -87,8 +89,9 @@ function Post(props) {
             <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} id="" /> <button onClick={handleComment} className="primary--button">add comment</button>
             </div>
         </div>
-
-    </div>
+    </div> 
+  
+</>
   );
 }
 

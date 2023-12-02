@@ -126,3 +126,10 @@
     height: 4rem;
     width: 4rem;
 }
+
+.p-none {
+  margin-top: 13rem !important;
+  position: unset !important;
+  width: fit-content;
+  margin: auto;
+}

@@ -7,7 +7,9 @@
   --clock-hour-length: calc(var(--clock-width) * 0.2);
   --clock-thickness: 0.2rem;
 
-  position: relative;
+  position: fixed;
+  top: 50vh;
+  left: 50%;
   display: flex;
   justify-content: center;
   align-items: center;

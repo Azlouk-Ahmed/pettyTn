@@ -11,7 +11,6 @@ function Pending() {
   const { auth } = useAuthContext();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(null);
-  const [AcceptLoading, setAcceptLoading] = useState(null);
   const token = auth ? auth.token : '';
   const {pending, dispatch} = usePostsContext();
 
@@ -37,49 +36,7 @@ function Pending() {
     fetchData();
   }, [auth, token]);
 
-  const deletePost = async (id) => {
-    try {
-      if (auth.user.role === "admin") {
-        const response = await axios.delete(`http://localhost:5000/api/admin/delete/post/${id}`, {
-          headers: {
-            Authorization: `Bearer ${auth.token}`,
-          },
-        });
-        dispatch({type: "DEL__PEDNING__POSTS",payload : response.data})
 
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  const acceptPost = async (postObject) => {
-    try {
-      setAcceptLoading(true);
-      const user_id = postObject.user._id;
-      const status = "active";
-      const { title, description, animalImg, contactMail, nb } = postObject;
-      const response = await axios.post('http://localhost:5000/api/public/posts', {
-        user_id,
-        title,
-        description,
-        animalImg,
-        contactMail,
-        nb,
-        status
-      }, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      console.log(response.data._id);
-      deletePost(postObject._id);
-      setAcceptLoading(false);
-    } catch (error) {
-      setAcceptLoading(false);
-      console.error(error);
-    }
-  }
   
   return (
     <div className='pending'>

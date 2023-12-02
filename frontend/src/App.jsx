@@ -11,6 +11,7 @@ import { usePostsContext } from './hooks/usePostsContext'
 import Pending from './pages/pending/Pending'
 import Post from './components/post/Post'
 import Requests from './pages/requests/Requests'
+import Contact from './components/contact/Contact'
 
 
 
@@ -38,6 +39,7 @@ function App() {
         <Route path='/timeline' element={auth ? <Timeline /> : <Navigate to="/login" />} />
         <Route path='/pending' element={auth && auth.user.role === "admin" ? <Pending /> : <Navigate to="/login" />} />
         <Route path='/requests' element={auth && auth.user.role === "admin" ?<Requests /> : <Navigate to="/login" />} />
+        <Route path='/timeline/contact/:email/:name' element={<Contact />} />
       </Routes>
       </BrowserRouter>
       

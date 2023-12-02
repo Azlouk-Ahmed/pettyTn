@@ -1,9 +1,8 @@
 .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    padding: 0rem 0;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
 }
 
 .user-info-wrapper {
@@ -74,3 +73,9 @@
     font-weight: bolder;
     color: var(--primary);
   }
+
+  .accepted a {
+    color: var(--primary-color);
+  }
+
+  
