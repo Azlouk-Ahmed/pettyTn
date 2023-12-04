@@ -62,7 +62,7 @@ function Post(props) {
               })}</p>
           </div>
         </div>
-        <span className='contact'>conact : <Link to={`/timeline/contact/${post.user.email}/${post.user.name}`}> <span> {post.user.email}</span> </Link></span>
+        <span className='contact'>direct message : <Link to={`/timeline/contact/${post.user.email}/${post.user.name}`}> <span> {post.user.email}</span> </Link></span>
       </div>
       <div className="post-content">
         <h4>{post.title}</h4>
@@ -74,7 +74,7 @@ function Post(props) {
       <div className="nb">
         <span>important</span>  : {post.nb}
       </div>
-        {post.status == "available" && !accepted && <div className="order-now-btn" onClick={() =>sendReq(post._id)}>
+        {post.status == "available" && !accepted && auth && <div className="order-now-btn" onClick={() =>sendReq(post._id)}>
             order now
         </div>}
         {accepted && <div className='accepted'>request has been submitted to admins</div>}
@@ -85,9 +85,9 @@ function Post(props) {
                   <img src={(auth.user.img)?"/img/"+auth.user.img : '/img/default.png'}/>
               }
             </div>
-            <div>
+            {auth &&<div>
             <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} id="" /> <button onClick={handleComment} className="primary--button">add comment</button>
-            </div>
+            </div>}
         </div>
     </div> 
   

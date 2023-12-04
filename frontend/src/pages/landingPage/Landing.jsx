@@ -7,6 +7,8 @@ import News from '../../components/new/News';
 import TheyNeedYou from '../../components/theyNeedYou/TheyNeedYou';
 import About from '../../components/about/About';
 import OurFrineds from '../../components/meetourfriends/OurFrineds';
+import Slider from "../../components/slider/Slider"
+
 
 function Landing() {
     const [text, setText] = useState('Welcome to Petty Tn!');
@@ -54,9 +56,10 @@ function Landing() {
           <img src="\img\image_processing20220523-1623-1mqcn9i.png" alt="" />
         </div>
       </section>
+      <About />
       <News />
       <TheyNeedYou />
-      <About />
+      <Slider />
       <OurFrineds />
       <Footer />
     </div>

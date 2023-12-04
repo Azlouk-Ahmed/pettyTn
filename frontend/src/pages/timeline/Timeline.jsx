@@ -7,8 +7,10 @@ import { usePostsContext } from '../../hooks/usePostsContext';
 import Loading from '../../components/loading/Loading';
 import PostForm from '../../components/addPost/PostForm';
 import Search from "../../components/search/Search"
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 function Timeline() {
+  const {auth} = useAuthContext();
   const {posts, dispatch} = usePostsContext();
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -30,7 +32,7 @@ function Timeline() {
     
       <Header />
       <Search />
-      <PostForm />
+      {auth && <PostForm />}
       {loading == true ? (
         <Loading />
       ) : (

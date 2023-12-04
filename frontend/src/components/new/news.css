@@ -49,6 +49,13 @@
 
 .box div {
     color: var(--text-color);
+    font-size: 11px;
+}
+
+.pg-la {
+    font-size: 12px;
+    text-align: justify;
+    color: var(--text-color);
 }
 
 .box img {

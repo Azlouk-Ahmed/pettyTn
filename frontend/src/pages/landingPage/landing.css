@@ -1,7 +1,7 @@
 
 .landing {
   display: flex;
-  gap: 5rem;
+  gap: 15rem;
   flex-direction: column;
 }
 

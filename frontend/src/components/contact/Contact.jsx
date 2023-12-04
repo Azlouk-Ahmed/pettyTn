@@ -32,7 +32,7 @@ function Contact() {
     <div>
       <form action="" className='postform p-none' onSubmit={handleSubmit}>
         <div className="message ">
-          <label htmlFor="description">message:</label>
+          <label htmlFor="description">send email to {name} :</label>
           <textarea
             id="message"
             cols="30"

@@ -45,7 +45,7 @@ function RequestCard({ request }) {
     emailjs.send("service_oh4sy9l", "template_061iovj", {
       name: req.user.name,
       surname: req.user.name,
-      message: "Your adoption has been accepted. Your pet will be there in 3 days.",
+      message: `Your adoption has been accepted. Your pet will be delevered to ${req.user.country} -  ${req.user.location} - ${req.user.codePostal} in maximum 3 days `,
       email: req.user.email,
     }, '5ddo6PQPTT7fIycvW')
       .then((result) => {
@@ -66,7 +66,7 @@ function RequestCard({ request }) {
     <div className='post-details w-100'>
       <div className="user-info">
         <div className='user-info-wrapper'>
-          <img src={request.user.img} alt="User" />
+          <img src={"/img/<"+request.user.img} alt="User" />
           <div className='user-info'>
             <p><span className='g-color'> {request.user.name} - {request.user.surname} </span>, a user from <span className='g-color'> {request.user.country}, {request.user.location} , {request.user.codePostal} </span></p>
             <p className='r-color'>Has requested to adopt this {formatDistanceToNow(new Date(request.createdAt), {

@@ -34,7 +34,7 @@ function PostForm() {
     };
   return (
     <form onSubmit={handleSubmit} className='postform'>
-        <h3>add a post</h3>
+        <h3>submit an annoucement</h3>
       <div className="title-container">
         <label htmlFor="title">Title:</label>
         <input

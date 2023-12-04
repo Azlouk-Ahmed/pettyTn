@@ -1,6 +1,7 @@
  import React, { useState, useEffect } from 'react';
  import './Login.css'; // Assurez-vous que le chemin est correct
 import { useLogin } from '../../hooks/useLogin';
+import { Link } from 'react-router-dom';
 
  const themes = [
    {
@@ -92,8 +93,7 @@ import { useLogin } from '../../hooks/useLogin';
              )}
            </form>
           <div className="register-forget opacity">
-             <a href="">REGISTER</a>
-             <a href="">FORGOT PASSWORD</a>
+             <Link to="/signup">REGISTER</Link>
            </div>
          </div>
          <div className="circle circle-two"></div>

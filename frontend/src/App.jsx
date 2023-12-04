@@ -33,10 +33,10 @@ function App() {
       <BrowserRouter>
       <Header />
       <Routes>
-        <Route path='/' element={auth? <Landing /> : <Navigate to="/login" />} />
+        <Route path='/' element={<Landing />} />
         <Route path='/login' element={!auth? <Login /> : <Navigate to="/" />}  />
         <Route path='/signup' element={!auth? <Signup /> : <Navigate to="/" />} />
-        <Route path='/timeline' element={auth ? <Timeline /> : <Navigate to="/login" />} />
+        <Route path='/timeline' element={<Timeline />} />
         <Route path='/pending' element={auth && auth.user.role === "admin" ? <Pending /> : <Navigate to="/login" />} />
         <Route path='/requests' element={auth && auth.user.role === "admin" ?<Requests /> : <Navigate to="/login" />} />
         <Route path='/timeline/contact/:email/:name' element={<Contact />} />

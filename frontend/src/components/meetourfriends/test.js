@@ -16,8 +16,8 @@ export const animals = [
             "__v": 0
         },
         "title": "from ahmed",
-        "description": "This is a sample post description about a cat.",
-        "animalImg": "/img/dog2.png",
+        "description": "Introducing 'MASHA', the adorable feline ambassador of PETTYTN! This charming little cat stole our hearts, and we believe it will steal yours too. MASHA, a playful and affectionate companion, embodies the spirit of our mission—to connect pets with loving homes.",
+        "animalImg": "https://pluspng.com/img-png/png-cute-cat--828.png",
         "contactMail": "contact@example.com",
         "nb": "123",
         "status": "active",
@@ -70,8 +70,8 @@ export const animals = [
             "__v": 0
         },
         "title": "from ahmed",
-        "description": "This is a sample post description about a cat.",
-        "animalImg": "/img/dog2.png",
+        "description": "Meet Quackers, the delightful duck bringing a touch of whimsy to PETTYTN! Quackers, with its charming quacks and feathered elegance, is ready to waddle into your heart and make a splash in your home. This feathered friend embodies the uniqueness and joy that pets bring to our lives.",
+        "animalImg": "https://th.bing.com/th/id/R.9550b4c5a5b9faf662513a0dd57ae876?rik=5JhWNsSnDFxBOA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fduck-hd-png--1508.png&ehk=gfsCvD9ag3hYSagXTejfYnrGupl7TaY5zlK%2bgSsmR2w%3d&risl=&pid=ImgRaw&r=0",
         "contactMail": "contact@example.com",
         "nb": "123",
         "status": "active",
@@ -124,8 +124,8 @@ export const animals = [
             "__v": 0
         },
         "title": "from ahmed",
-        "description": "This is a sample post description about a cat.",
-        "animalImg": "/img/dog2.png",
+        "description": "This is Barkley, the lovable canine ambassador of PETTYTN! With a wagging tail and a heart full of loyalty, this furry friend is ready to become your new best companion. ",
+        "animalImg": "https://th.bing.com/th/id/R.0520376c80f2c2f9930d38a04cecf784?rik=f%2fQ0ZYTygj%2bQwA&riu=http%3a%2f%2fclipart.info%2fimages%2fccovers%2f1503688584Cute-Dog-Face-PNG-Image.png&ehk=6etajCWs87BzbNcqVrklGX%2fmVuRzbc9454gn7T7A8%2bY%3d&risl=&pid=ImgRaw&r=0",
         "contactMail": "contact@example.com",
         "nb": "123",
         "status": "active",
@@ -178,8 +178,8 @@ export const animals = [
             "__v": 0
         },
         "title": "from ahmed",
-        "description": "This is a sample post description about a cat.",
-        "animalImg": "/img/dog2.png",
+        "description": "Hey there! Are you surprised? Well, prepare for even more excitement because at PETTYTN, we've got all kinds of pets, including our playful primate pal – meet Mischief the Monkey! Mischief is ready to swing into your life with boundless energy and endless entertainment. ",
+        "animalImg": "https://th.bing.com/th/id/R.eebb498ca9023392b31910da665b12cc?rik=sO3Ik8khv3Dheg&pid=ImgRaw&r=0",
         "contactMail": "contact@example.com",
         "nb": "123",
         "status": "active",

@@ -1,8 +1,6 @@
 .site-footer
 {
   background-color:#f1f1f1;
-  padding-right: 7%;
-  padding-left: 7%;
   font-size:15px;
   line-height:24px;
   color:#737373;
@@ -167,4 +165,8 @@
   position: absolute;
   top: -163px;
   left: -55px;
+}
+
+.fc {
+  width: fit-content !important;
 }

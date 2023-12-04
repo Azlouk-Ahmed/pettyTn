@@ -3,6 +3,7 @@ import './Signup.css'
 import { CiImageOn } from "react-icons/ci";
 import { IoMdAdd } from "react-icons/io";
 import { useSign } from '../../hooks/useSignUp';
+import { Link } from 'react-router-dom';
 
 const themes = [
   {
@@ -103,7 +104,7 @@ function Signup() {
           type="email"
           value={email}
           onChange={handleEmailChange}
-          required
+          
         />
 
         <label>Mot de passe:</label>
@@ -111,7 +112,7 @@ function Signup() {
           type="password"
           value={password}
           onChange={handlePasswordChange}
-          required
+          
         />
 
         <label>Nom:</label>
@@ -119,7 +120,7 @@ function Signup() {
           type="text"
           value={surname}
           onChange={handlesurnameChange}
-          required
+          
         />
 
         <label>Prénom:</label>
@@ -127,7 +128,7 @@ function Signup() {
           type="text"
           value={name}
           onChange={handlenameChange}
-          required
+          
         />
 
         
@@ -179,8 +180,7 @@ function Signup() {
                 </div>
              )}
           <div className="register-forget opacity">
-             <a href="">S'INSCRIRE</a>
-             <a href="">LOG IN</a>
+             <Link to="/login">LOGIN</Link>
            </div>
       </form>
          

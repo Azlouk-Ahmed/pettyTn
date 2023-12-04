@@ -21,10 +21,10 @@ function Header() {
       </div>
       <div className="links">
 
-      {auth &&
+
         <Link to="/timeline">
-         view posts
-        </Link>}
+         view announcements
+        </Link>
       {auth && auth.user.role === "admin" && (
         <Link to="/pending">
           pending posts
