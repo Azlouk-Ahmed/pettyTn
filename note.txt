@@ -1,7 +1,7 @@
 why mern ?
 MERN stands for MongoDB, Express.js, React, and Node.js, and it is a popular stack of technologies used for building web applications. Each component of the MERN stack serves a specific purpose and offers advantages for web development. Here's why MERN apps are popular:
 
-Full Stack Development: MERN is a full-stack JavaScript framework. This means that you can use a single language (JavaScript) for both the front-end (React) and the back-end (Node.js). This streamlines development and makes it easier for developers to work on the entire application.
+Full Stack Development: MERN is a full-stack JavaScript framework. This means that you can use a single language (JavaScript) for both the front-end (React) and the back-end (Node.js). This streamlines development and makes it easier for developers to work on the entire application .
 
 JavaScript Everywhere: Using JavaScript for both the client and server-side allows for code reusability and a consistent development experience. Developers can share code and libraries between the client and server, which can save time and resources.
 
